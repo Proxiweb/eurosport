@@ -1,8 +1,7 @@
 import Grid from "@mui/material/Grid";
 import { useQuery } from "@apollo/client";
 import Typography from "@mui/material/Typography";
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
+import CircularProgress from "@mui/material/CircularProgress";
 
 import queries from "../../Queries";
 import Head2Head from "../../Model";
@@ -12,15 +11,17 @@ const HomeContainer = () => {
   const { data, loading, error } = useQuery<Head2Head>(queries.PLAYERS);
 
   if (loading) {
-    <Box sx={{ display: 'flex' }}>
-      <CircularProgress />
-    </Box>
+    return (
+      <Grid container justifyContent="center">
+        <Grid item sx={{ p: 4 }}>
+          <CircularProgress />
+        </Grid>
+      </Grid>
+    );
   }
 
   if (error) {
-
     return <div>{error}</div>;
-
   }
 
   return (
