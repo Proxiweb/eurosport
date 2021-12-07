@@ -1,5 +1,4 @@
 import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
 import { Players, Player } from "../../../Model";
 import PlayerItem from "./PlayerItem";
 
